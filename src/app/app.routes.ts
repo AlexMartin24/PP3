@@ -8,6 +8,7 @@ import { CursoComponent } from './features/Cursos/curso/curso.component';
 import { LoginComponent } from './auth/login/login.component';
 import { FormComponent } from './auth/form/form.component';
 import { IndexComponent } from './core/components/index/index.component';
+import { ListarUsuariosComponent } from './features/Usuarios/listar-usuarios/listar-usuarios.component';
 
 export const routes: Routes = [
   { path: 'profesores', component: ListarProfesorComponent },
@@ -17,7 +18,7 @@ export const routes: Routes = [
   { path: 'cursos', component: ListarCursosComponent },
   { path: 'curso/:idCurso', component: CursoComponent },
 
-  { path: 'alumnos', component: ListarAlumnosComponent },
+  { path: 'alumnos', component: ListarUsuariosComponent },
   { path: 'alumno/:idAlumno', component: PerfilAlumnoComponent },
 
   { path: 'form', component: FormComponent },

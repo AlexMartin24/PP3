@@ -29,7 +29,7 @@ export class NavbarComponent {
     this.loginService
       .logout()
       .then(() => {
-        this.router.navigate(['/alumnos']);
+        this.router.navigate(['/']);
 
       })
       .catch((error) => console.log(error));

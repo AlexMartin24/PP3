@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Centrar el texto horizontalmente */
+  .centered-header,
+  .centered-cell {
+    text-align: center;
+  }
+  
+  .paginator-container {
+    display: flex;
+    margin-top: 20px;
+    /* Espacio superior */
+  }
+  
+  .titulos {
+    display: flex;
+    justify-content: space-between;
+    /* Espacio entre el título y el botón */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    margin: 20px 0;
+    /* Margen superior e inferior opcional */
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  
+  .btnEditYElim {
+    margin: 7px;
+  }
+  
+  .btnDetalle {
+    display: inline-block;
+    /* Mantiene el comportamiento como botón */
+    padding: 8px 16px;
+    /* Ajustar el padding para un botón más grande */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el mouse */
+    text-align: center;
+    /* Centra el texto */
+    background-color: #007bff;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Transiciones suaves */
+  }
+  
+  .btnDetalle:hover {
+    background-color: #0056b3;
+    /* Color de fondo al pasar el mouse */
+    transform: scale(1.05);
+    /* Aumenta ligeramente el tamaño al pasar el mouse */
+  }
+  
+  td {
+    font-size: 15px;
+    font-family: Verdana, sans-serif;
+  }
+  

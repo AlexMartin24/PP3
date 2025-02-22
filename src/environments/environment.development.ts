@@ -1,10 +1,10 @@
 export const environment = {
     firebase: {
-        apiKey: "AIzaSyBy1moV8gkKsPKyzOAEWiIbu4MMEeqtBX8",
-        authDomain: "cursos-44c07.firebaseapp.com",
-        projectId: "cursos-44c07",
-        storageBucket: "cursos-44c07.appspot.com",
-        messagingSenderId: "78094982129",
-        appId: "1:78094982129:web:10d830d630b69c2676c250"
+    apiKey: 'AIzaSyC8mEM2CziTUQAVwpnlkxAM94cLQOvIujY',
+    authDomain: 'gestion365-62761.firebaseapp.com',
+    projectId: 'gestion365-62761',
+    storageBucket: 'gestion365-62761.firebasestorage.app',
+    messagingSenderId: '22395293381',
+    appId: '1:22395293381:web:abbebe736a8dbef7e26aac',
     }
 };

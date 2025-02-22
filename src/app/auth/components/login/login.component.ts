@@ -6,13 +6,14 @@ import { Router } from '@angular/router';
 import { SharedModule } from '../../../shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AuthService } from '../../service/auth.service';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [SharedModule, MatDialogModule],
+  imports: [SharedModule, MatDialogModule, MatDividerModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   loginUser!: FormGroup;
@@ -28,15 +29,20 @@ export class LoginComponent {
         Validators.required,
         Validators.email,
       ]),
-      password: new FormControl(data.password, [
-        Validators.required,
-      ]),
+      password: new FormControl(data.password, [Validators.required]),
     });
   }
 
+  registrarse() {
+    this.dialogRef.close();
+
+    this.router.navigate(['/auth/registrarse']);
+  }
+
   loginGoogle() {
-    this.authService.loginWithGoogle()
-      .then(response => {
+    this.authService
+      .loginWithGoogle()
+      .then((response) => {
         if (response.newUser) {
           this.router.navigate(['/form']); // Redirigir al formulario
         } else {
@@ -44,19 +50,20 @@ export class LoginComponent {
         }
         this.dialogRef.close();
       })
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   }
 
   enviarForm() {
     console.log(this.loginUser.value);
 
-    this.authService.login(this.loginUser.value)
+    this.authService
+      .login(this.loginUser.value)
       .then(() => {
         // Cierra el diálogo
         this.dialogRef.close();
         // Redirige a otra página
         this.router.navigate(['/cursos']);
       })
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   }
 }

@@ -1,0 +1,117 @@
+<h1 mat-dialog-title>Datos del Usuario</h1>
+<div mat-dialog-content class="medidas-dialog">
+  <form [formGroup]="formularioEditar" class="input-group-sm mb-3">
+    <!-- <div class="row">
+        <label for="id" class="form-label">
+          id:
+          <input
+            type="text"
+            name="id"
+            formControlName="id"
+            class="form-control"
+          />
+        </label>
+      </div> -->
+
+    <div class="row">
+      <label for="nombre" class="form-label">Nombre:
+        <input type="text" name="nombre" formControlName="nombre" class="form-control" />
+        <div class="valido"
+          *ngIf="formularioEditar.controls['nombre'].dirty && formularioEditar.controls['nombre'].valid">Correcto!</div>
+        <div class="invalido"
+          *ngIf="formularioEditar.controls['nombre'].dirty && formularioEditar.controls['nombre'].errors?.['required']">
+          El campo es requerido</div>
+        <div class="invalido"
+          *ngIf="formularioEditar.controls['nombre'].dirty && formularioEditar.controls['nombre'].errors?.['pattern']">
+          Este campo solo puede contener letras</div>
+      </label>
+    </div>
+
+    <div class="row">
+      <label for="apellido" class="form-label">Apellido:
+        <input type="text" name="apellido" formControlName="apellido" class="form-control" />
+        <div class="valido"
+          *ngIf="formularioEditar.controls['apellido'].dirty && formularioEditar.controls['apellido'].valid">Correcto!
+        </div>
+        <div class="invalido"
+          *ngIf="formularioEditar.controls['apellido'].dirty && formularioEditar.controls['apellido'].errors?.['required']">
+          El campo es requerido
+        </div>
+        <div class="invalido"
+          *ngIf="formularioEditar.controls['apellido'].dirty && formularioEditar.controls['apellido'].errors?.['pattern']">
+          Este campo solo puede contener letras
+        </div>
+      </label>
+    </div>
+
+    <div class="row">
+      <label for="correo" class="form-label">correo:
+        <input type="text" name="correo" formControlName="correo" class="form-control" />
+        <div class="valido"
+          *ngIf="formularioEditar.controls['correo'].dirty && formularioEditar.controls['correo'].valid">Correcto!
+        </div>
+        <div class="invalido"
+          *ngIf="formularioEditar.controls['correo'].dirty && formularioEditar.controls['correo'].errors?.['required']">
+          El campo es requerido
+        </div>
+        <div class="invalido"
+          *ngIf="formularioEditar.controls['correo'].dirty && formularioEditar.controls['correo'].errors?.['pattern']">
+          Mail incorrecto
+        </div>
+      </label>
+    </div>
+
+
+
+    <!-- <div class="row">
+      <label for="codigoArea" class="form-label">Código de Área:</label>
+      <input type="text" formControlName="codigoArea" class="form-control" placeholder="+54 9" />
+      <div *ngIf="formularioEditar.controls['codigoArea'].invalid && formularioEditar.controls['codigoArea'].touched">
+        <div *ngIf="formularioEditar.controls['codigoArea'].errors?.['required']">El código de área es requerido</div>
+        <div *ngIf="formularioEditar.controls['codigoArea'].errors?.['pattern']">Formato incorrecto</div>
+      </div>
+    </div>   -->
+
+    <div class="row">
+      <label for="telefono" class="form-label">Telefono:
+        <input type="text" name="telefono" formControlName="telefono" class="form-control" />
+        <div class="valido"
+          *ngIf="formularioEditar.controls['telefono'].dirty && formularioEditar.controls['telefono'].valid">Correcto!
+        </div>
+        <div class="invalido"
+          *ngIf="formularioEditar.controls['telefono'].dirty && formularioEditar.controls['telefono'].errors?.['pattern']">
+          Este campo solo puede contener números.
+        </div>
+      </label>
+    </div>
+
+    <div class="row">
+      <label for="direccion" class="form-label">Dirección:
+        <input type="text" name="direccion" formControlName="direccion" class="form-control" />
+        <div *ngIf="formularioEditar.controls['direccion'].dirty">
+          <div class="valido" *ngIf="formularioEditar.controls['direccion'].valid">Correcto!</div>
+          <div class="invalido" *ngIf="formularioEditar.controls['direccion'].errors?.['required']">
+            El campo es requerido.
+          </div>
+          <div class="invalido" *ngIf="formularioEditar.controls['direccion'].errors?.['pattern']">
+            Caracter inválido.
+          </div>
+        </div>
+      </label>
+    </div>
+
+       
+  <mat-form-field>
+    <mat-label>Fecha de Nacimiento: </mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento" placeholder="dd/mm/yyyy" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+    
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+  <button mat-button color="warn" (click)="cancelar()">Cancelar</button>
+</div>
